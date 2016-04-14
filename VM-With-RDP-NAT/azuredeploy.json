@@ -86,7 +86,7 @@
         },
         "subnets": [
           {
-            "name": "variables('subnetName')",
+            "name": "[variables('subnetName')]",
             "properties": {
               "addressPrefix": "[variables('subnetAddressRange')]"
             }
