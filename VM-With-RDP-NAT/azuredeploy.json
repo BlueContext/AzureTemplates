@@ -168,7 +168,7 @@
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "DEV-VS15WIN10",
+      "name": "[parameters('vmName')]",
       "location": "[variables('location')]",
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts',variables('storageAccountName'))]",
