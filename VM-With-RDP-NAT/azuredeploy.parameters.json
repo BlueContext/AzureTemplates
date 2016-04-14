@@ -3,19 +3,19 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "dnsLabelPrefix": {
-      "value": "GEN-UNIQUE"
+      "value": "dev-vs15win10"
     },
     "vmName": {
-      "value": "rdpVM"
+      "value": "DEV-VS15WIN10
     },
     "adminUsername": {
-      "value": "azureUser"
+      "value": "devadmin"
     },
     "adminPassword": {
       "value": "GEN-PASSWORD"
     },
     "rdpPort": {
-      "value": 50001
+      "value": 8080
     }
   }
 }
