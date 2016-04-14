@@ -44,6 +44,7 @@
     "subnetAddressRange": "10.0.0.0/24",
     "subnetName": "DevWorkstationsVnetSubnet",
     "subnet-id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName')),'/subnets/',variables('subnetName'))]",
+    "nicName": "Nic1",
     "imagePublisher": "MicrosoftVisualStudio",
     "imageOffer": "VisualStudio",
     "imageSku": "VS-Next-Preview-Ent-AzureSDK-2.9-W10-N",
@@ -135,7 +136,7 @@
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Network/networkInterfaces",
-      "name": "[concat(parameters('vmName'),'-nic')]",
+      "name": "[variables('nicName')]",
       "location": "[variables('location')]",
       "dependsOn": [
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
@@ -172,7 +173,7 @@
       "location": "[variables('location')]",
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts',variables('storageAccountName'))]",
-        "[concat('Microsoft.Network/networkInterfaces/',parameters('vmName'),'-nic')]"
+        "[concat('Microsoft.Network/networkInterfaces/',variables('nicName')]"
       ],
       "properties": {
         "hardwareProfile": {
@@ -202,7 +203,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(parameters('vmName'),'-nic'))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',[variables('nicName')]]"
             }
           ]
         },
