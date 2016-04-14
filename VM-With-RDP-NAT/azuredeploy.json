@@ -10,7 +10,7 @@
     },
     "vmName": {
       "type": "string",
-      "defaultValue": "",
+      "defaultValue": "DEV-VS15WIN10",
       "metadata": {
         "description": "The name of the VM"
       }
@@ -30,7 +30,7 @@
     },
     "rdpPort": {
       "type": "int",
-      "defaultValue": 50001,
+      "defaultValue": 8080,
       "metadata": {
         "description": "Public port number for RDP"
       }
